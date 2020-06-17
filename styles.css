@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: MuseoModerno;
+    box-sizing: border-box;
 }
 
 .flex0 {
@@ -40,11 +41,22 @@ input {
     width: 20vw;
 }
 
+button {
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
 #budgetBtn {
     width: 100px;
-    padding: 5px;
     color: green;
     border: 1px solid green;
+}
+
+#budgetBtn:hover {
+    background-color: green;
+    color: white;
 }
 
 .flex2 {
@@ -67,7 +79,21 @@ input {
 }
 
 #expenseBtn {
-    padding: 5px;
     color: red;
     border: 1px solid red;
+}
+
+#expenseBtn:hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
+#errExpense,
+#errBudget {
+    display: none;
+    background-color: rgb(243, 125, 125);
+    font-weight: bold;
+    color: rgb(165, 0, 0);
+    margin: 20px;
+    padding: 3px;
 }

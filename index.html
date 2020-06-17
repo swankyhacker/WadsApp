@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WadsApp</title>
     <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <div class="flex1">
         <div id="budgetForm" class="flex1-item">
             <h5>Enter Your Budget</h5>
-            <input type="number">
+            <input id="budgetValue" type="number">
             <br>
             <button id=budgetBtn>Calculate</button>
         </div>
@@ -45,13 +46,17 @@
         </div>
     </div>
 
+    <div id="errBudget">
+        Null or Zero input values are not allowed.
+    </div>
+
     <div class="flex2">
         <div id="expenseForm" class="flex2-item">
             <h5>Enter Your Expense</h5>
-            <input type="number">
+            <input id="expenseInfo" type="text">
             <br>
             <h5>Enter Expense Amount</h5>
-            <input type="text">
+            <input id="expenseValue" type="number">
             <br>
             <button id="expenseBtn">Add Expense</button>
         </div>
@@ -65,7 +70,10 @@
         <div class="flex2-item">
 
         </div>
+    </div>
 
+    <div id="errExpense">
+        Null or Zero input values are not allowed.
     </div>
 
 
