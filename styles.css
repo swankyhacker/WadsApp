@@ -88,6 +88,11 @@ button {
     color: whitesmoke;
 }
 
+.header {
+    margin: 0px 10px;
+    font-weight: bold;
+}
+
 #errExpense,
 #errBudget {
     display: none;
@@ -96,4 +101,9 @@ button {
     color: rgb(165, 0, 0);
     margin: 20px;
     padding: 3px;
+}
+
+#expenseTable {
+    display: flex;
+    background-color: aqua;
 }

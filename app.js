@@ -14,10 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let expense = 0;
     let balance = 0;
 
-    expenseLog = {
-        name: "",
-        amount: 0
+    class record {
+        constructor(name, amount, counter) {
+            this.name = name;
+            this.amount = amount;
+            this.counter = counter;
+        }
     }
+
+    log = [];
+    counter = 0;
 
     budgetBtn.addEventListener("click", () => {
         if (checkInput(budgetValue.value) == false) {
@@ -27,21 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 errBudget.style.display = "none";
             }, 3000);
         } else {
-            budget = budgetValue.value;
-            budgetValue.value = null;
-            valBudget.innerHTML = budget;
+            budget = parseInt(budgetValue.value);
+            valBudget.innerHTML = budget
+            budgetValue.innerHTML = null;
+            updateBalance(log);
         }
     })
 
     expenseBtn.addEventListener("click", () => {
-        if (checkInput(expenseValue.value) == false) {
+        if (checkInput(expenseValue.value) == false || expenseInfo.value === "") {
             errExpense.style.display = "inline";
             expenseValue.value = null;
             setTimeout(() => {
                 errExpense.style.display = "none";
             }, 3000);
         } else {
-
+            recordExpense = new record(expenseInfo.value, expenseValue.value, counter);
+            log.push(recordExpense);
+            counter++;
+            expenseValue.value = null;
+            expenseInfo.value = null;
+            updateBalance(log);
+            updateTable(recordExpense);
         }
     })
 
@@ -52,6 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     }
 
+    function updateBalance(log) {
+        expense = 0;
+        for (let i = 0; i < log.length; i++) {
+            expense += parseInt(log[i].amount);
+        }
+        console.log(expense);
+        valExpenses.innerHTML = expense;
+        valBalance.innerHTML = budget - expense;
+    }
 
+    function updateTable(record) {
+        // create div elements to add to new blue flexbox
+        // use dataset attribute to uniquely identify each div
+    }
 
 })
