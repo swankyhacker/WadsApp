@@ -75,6 +75,12 @@ button {
 }
 
 #expenseTable {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+#expenseTable {
     flex-grow: 3;
 }
 
@@ -88,7 +94,20 @@ button {
     color: whitesmoke;
 }
 
-.header {
+.flex2-inner-item {
+    display: flex;
+    background-color: azure;
+    justify-content: space-between;
+}
+
+.title {
+    justify-self: flex-start;
+    margin: 0px 10px;
+    font-weight: bold;
+}
+
+.value {
+    justify-self: flex-end;
     margin: 0px 10px;
     font-weight: bold;
 }
@@ -101,9 +120,4 @@ button {
     color: rgb(165, 0, 0);
     margin: 20px;
     padding: 3px;
-}
-
-#expenseTable {
-    display: flex;
-    background-color: aqua;
 }
