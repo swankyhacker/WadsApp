@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         console.log(expense);
         valExpenses.innerHTML = expense;
-        valBalance.innerHTML = budget - expense;
+        balance = budget - expense;
+        valBalance.innerHTML = balance;
     }
 
     function updateTable(record) {
