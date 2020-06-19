@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         valExpenses.innerHTML = expense;
         balance = budget - expense;
         valBalance.innerHTML = balance;
+        updateGraphics();
     }
 
     function addTable(record) {
@@ -79,15 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const editButton = document.createElement("a");
         const deleteButton = document.createElement("a");
         expenseTable.append(postRecord);
-        postRecord.innerHTML = `<span class = "title"> ${record.name} <span class = "value"> $${record.amount}`; //Try using div instead of span for positioning
+        postRecord.innerHTML = `<div class = "title"> ${record.name} </div>
+                                 <div class = "value"> $${record.amount} </div>`; //Try using div instead of span for positioning
         postRecord.className = "flex2-inner-item";
         postRecord.append(editButton);
         postRecord.append(deleteButton);
         postRecord.dataset.index = record.counter;
         editButton.href = "#";
         deleteButton.href = "#";
-        editButton.innerHTML = "Edit";
-        deleteButton.innerHTML = "Delete";
+        // editButton.innerHTML = `<img src = "./images/edit.png">`;
+        // deleteButton.innerHTML = `<img src = "./images/delete.png">`;
+        editButton.className = "editBtn";
+        deleteButton.className = "deleteBtn";
         counter++;
         editButton.onclick = () => {
             editRecord();
@@ -119,6 +123,18 @@ document.addEventListener("DOMContentLoaded", () => {
         log.splice(log.indexOf(logRecord), 1);
         element.parentElement.remove();
         updateBalance();
+    }
+
+    function updateGraphics() {
+        balanceHeader = document.querySelector("#balanceHeader");
+        mainIcon = document.querySelector("#mainIcon");
+        if (balance < 1) {
+            balanceHeader.style.color = "red";
+            mainIcon.src = `./images/broke.jpg`
+        } else {
+            balanceHeader.style.color = "green"
+            mainIcon.src = `./images/loaded.jpg`;
+        }
     }
 })
 

@@ -48,6 +48,18 @@ button {
 
 }
 
+#budgetHeader {
+    color: green;
+}
+
+#expenseHeader {
+    color: red;
+}
+
+#balanceHeader {
+    color: grey;
+}
+
 #budgetBtn {
     width: 100px;
     color: green;
@@ -77,10 +89,15 @@ button {
 #expenseTable {
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+}
+
+#expenseForm {
+    width: 25%;
+    margin-right: 60px;
 }
 
 #expenseTable {
+    width: 75%;
     flex-grow: 3;
 }
 
@@ -97,19 +114,34 @@ button {
 .flex2-inner-item {
     display: flex;
     background-color: azure;
+    font-weight: bold;
     justify-content: space-between;
 }
 
+
+
 .title {
-    justify-self: flex-start;
-    margin: 0px 10px;
-    font-weight: bold;
+    width: 50%;
 }
 
 .value {
-    justify-self: flex-end;
-    margin: 0px 10px;
-    font-weight: bold;
+    width: 40%;
+}
+
+.flex2-inner-item>button,
+a {
+    width: 5%;
+    margin-right: 2px;
+}
+
+.editBtn {
+    background-image: url("./images/edit.png");
+    background-repeat: no-repeat;
+}
+
+.deleteBtn {
+    background-image: url("./images/delete.png");
+    background-repeat: no-repeat;
 }
 
 #errExpense,

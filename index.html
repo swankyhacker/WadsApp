@@ -12,7 +12,7 @@
 <body>
 
     <div class="flex0">
-        <img src="./images/wadsUp.png" alt="thumsUp-pic">
+        <img id="mainIcon" src="./images/wadsUp.png" alt="thumsUp-pic">
         <h2>BUDGET APP</h2>
     </div>
 
@@ -28,21 +28,21 @@
             <h4>BUDGET</h4>
             <img src="./images/budget.png" alt="bill-pic">
             <br>
-            <h2>$ <span id="valBudget">0</span></h2>
+            <h2 id="budgetHeader">$ <span id="valBudget">0</span></h2>
         </div>
 
         <div id="expBudget" class="flex1-item">
             <h4>EXPENSE</h4>
             <img src="./images/credit-card.png" alt="card-pic">
             <br>
-            <h2>$ <span id="valExpenses">0</span></h2>
+            <h2 id="expenseHeader">$ <span id="valExpenses">0</span></h2>
         </div>
 
         <div id="dispBalance" class="flex1-item">
             <h4>BALANCE</h4>
             <img src="./images/wallet.png" alt="wallet-pic">
             <br>
-            <h2>$ <span id="valBalance">0</span></h2>
+            <h2 id="balanceHeader">$ <span id="valBalance">0</span></h2>
         </div>
     </div>
 
@@ -63,8 +63,10 @@
 
         <div id="expenseTable" class="flex2-item">
             <div class="flex2-inner-item">
-                <span class="title">Expense Title</span>
-                <span class="value">Expense Value</span>
+                <div class="title">Expense Title</div>
+                <div class="value">Expense Value</div>
+                <a></a>
+                <a></a>
             </div>
         </div>
     </div>
